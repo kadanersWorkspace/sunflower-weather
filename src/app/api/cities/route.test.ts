@@ -286,18 +286,14 @@ describe("Cities API", () => {
 
     expect(response.status).toBe(200);
     
-    // Find specific cities and check their approximate distances
+
     const cairo = data.cities.find((city: any) => city.name === "Cairo");
     const tokyo = data.cities.find((city: any) => city.name === "Tokyo");
     const barcelona = data.cities.find((city: any) => city.name === "Barcelona");
 
-    // Cairo should be closest (approximately 400-500 km)
+
     expect(cairo.distanceFromTelAviv).toBeLessThan(1000);
-    
-    // Barcelona should be further (approximately 3000+ km)
-    expect(barcelona.distanceFromTelAviv).toBeGreaterThan(2000);
-    
-    // Tokyo should be furthest (approximately 8000+ km)
+    expect(barcelona.distanceFromTelAviv).toBeGreaterThan(2000);    
     expect(tokyo.distanceFromTelAviv).toBeGreaterThan(7000);
   });
 }) 
