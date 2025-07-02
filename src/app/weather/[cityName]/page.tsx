@@ -55,7 +55,7 @@ async function WeatherContent({
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-4">
                 <Link
-                  href="/dashboard"
+                  href={`/dashboard?units=${units}`}
                   className="text-blue-600 hover:text-blue-800 transition-colors"
                 >
                   ← Back to Dashboard
@@ -136,7 +136,7 @@ async function WeatherContent({
             Sorry, we couldn't fetch the weather data for {city.name}.
           </p>
           <Link
-            href="/dashboard"
+            href="/dashboard?units=celsius"
             className="text-blue-600 hover:text-blue-800 transition-colors"
           >
             ← Back to Dashboard

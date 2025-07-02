@@ -1,6 +1,7 @@
 import { City } from "@/mocks/cities";
 import CityList from "@/components/CityList/CityList";
 import DashboardFilters from "@/components/DashboardFilters/DashboardFilters";
+import DashboardUrlManager from "./DashboardUrlManager";
 
 // Extended type for cities with distance
 type CityWithDistance = City & {
@@ -38,6 +39,7 @@ export default async function Home({ searchParams }: PageProps) {
 
   return (
     <>
+      <DashboardUrlManager />
       <DashboardFilters />
       <CityList cities={data.cities} />
     </>

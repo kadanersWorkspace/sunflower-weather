@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { City } from "@/mocks/cities";
 import {
   Card,
@@ -14,12 +17,41 @@ type CityWithDistance = City & {
 };
 
 export default function CityList({ cities }: { cities: CityWithDistance[] }) {
+  const searchParams = useSearchParams();
+
+  const createWeatherUrl = (cityName: string) => {
+    const params = new URLSearchParams(searchParams?.toString() || "");
+    // Ensure units parameter exists, default to celsius if not set
+    if (!params.has("units")) {
+      params.set("units", "celsius");
+    }
+    const weatherPath = `/weather/${encodeURIComponent(
+      cityName.toLowerCase()
+    )}`;
+    return `${weatherPath}?${params.toString()}`;
+  };
+
+  if (cities.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center py-16">
+        <div className="text-center">
+          <h3 className="text-xl font-medium text-gray-900 mb-2">
+            No results found
+          </h3>
+          <p className="text-gray-600">
+            Try adjusting your search or filter criteria to find cities.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="grid auto-rows-min gap-7 md:grid-cols-6">
       {cities.map((city) => (
         <Link
           key={city.country + city.name}
-          href={`/weather/${encodeURIComponent(city.name.toLowerCase())}`}
+          href={createWeatherUrl(city.name)}
           className="transition-transform hover:scale-105 cursor-pointer"
         >
           <Card

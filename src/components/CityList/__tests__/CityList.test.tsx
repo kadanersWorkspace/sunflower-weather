@@ -139,6 +139,14 @@ describe("CityList Component", () => {
 
     const cityCards = screen.queryAllByTestId("city-card");
     expect(cityCards).toHaveLength(0);
+
+    // Check that "No results found" message is displayed
+    expect(screen.getByText("No results found")).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        "Try adjusting your search or filter criteria to find cities."
+      )
+    ).toBeInTheDocument();
   });
 
   it("generates unique keys for each city", () => {
