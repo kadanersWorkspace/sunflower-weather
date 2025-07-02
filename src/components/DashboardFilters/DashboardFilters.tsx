@@ -2,15 +2,11 @@
 
 import Search from "@/components/Search/Search";
 import Sort from "@/components/Sort/Sort";
+import Units from "@/components/Units/Units";
 
 const SORT_OPTIONS = [
   { value: "name", label: "Name" },
   { value: "distance", label: "Distance" },
-];
-
-const UNIT_OPTIONS = [
-  { value: "celsius", label: "°C" },
-  { value: "fahrenheit", label: "°F" },
 ];
 
 export default function DashboardFilters() {
@@ -25,7 +21,7 @@ export default function DashboardFilters() {
 
         <Search label="Continent" placeholder="" queryParam="continent" />
         <Sort label="Sort by" options={SORT_OPTIONS} queryParam="sortBy" />
-        <Sort label="Units" options={UNIT_OPTIONS} queryParam="units" />
+        <Units label="Units" />
       </div>
     </div>
   );
