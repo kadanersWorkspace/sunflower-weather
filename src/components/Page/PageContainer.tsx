@@ -6,9 +6,9 @@ export default function PageContainer({
   return (
     <div
       data-testid="page-container"
-      className="flex flex-col items-center justify-center h-screen"
+      className="flex flex-col items-center py-[30px]"
     >
-      {children}
+      <div className="max-w-fit">{children}</div>
     </div>
   );
 }
