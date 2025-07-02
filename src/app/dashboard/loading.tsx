@@ -14,11 +14,11 @@ export default function Loading() {
         </div>
       </div>
 
-      <div className="grid auto-rows-min gap-7 md:grid-cols-6">
+      <div className="grid auto-rows-min gap-4 sm:gap-6 lg:gap-7 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
         {Array.from({ length: 12 }).map((_, index) => (
           <div
             key={index}
-            className="w-[222px] h-[206px] p-[20px] relative bg-gray-100 rounded-xl animate-pulse"
+            className="w-full h-[206px] p-[20px] relative bg-gray-100 rounded-xl animate-pulse aspect-[222/206]"
           >
             <CardSkeleton />
           </div>

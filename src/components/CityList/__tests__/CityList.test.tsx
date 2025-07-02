@@ -113,8 +113,15 @@ describe("CityList Component", () => {
     expect(gridContainer).toHaveClass(
       "grid",
       "auto-rows-min",
-      "gap-7",
-      "md:grid-cols-6"
+      "gap-4",
+      "sm:gap-6",
+      "lg:gap-7",
+      "grid-cols-1",
+      "sm:grid-cols-2",
+      "md:grid-cols-3",
+      "lg:grid-cols-4",
+      "xl:grid-cols-5",
+      "2xl:grid-cols-6"
     );
   });
 
@@ -125,11 +132,12 @@ describe("CityList Component", () => {
 
     cityCards.forEach((card) => {
       expect(card).toHaveClass(
-        "w-[222px]",
+        "w-full",
         "h-[206px]",
         "p-[20px]",
         "@container/card",
-        "text-white"
+        "text-white",
+        "aspect-[222/206]"
       );
     });
   });
@@ -207,6 +215,13 @@ describe("CityList Component", () => {
     const { container } = render(<CityList cities={mockCities} />);
 
     const gridContainer = container.firstChild;
-    expect(gridContainer).toHaveClass("md:grid-cols-6");
+    expect(gridContainer).toHaveClass(
+      "grid-cols-1",
+      "sm:grid-cols-2",
+      "md:grid-cols-3",
+      "lg:grid-cols-4",
+      "xl:grid-cols-5",
+      "2xl:grid-cols-6"
+    );
   });
 });

@@ -47,16 +47,16 @@ export default function CityList({ cities }: { cities: CityWithDistance[] }) {
   }
 
   return (
-    <div className="grid auto-rows-min gap-7 md:grid-cols-6">
+    <div className="grid auto-rows-min gap-4 sm:gap-6 lg:gap-7 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
       {cities.map((city) => (
         <Link
           key={city.country + city.name}
           href={createWeatherUrl(city.name)}
-          className="transition-transform hover:scale-105 cursor-pointer"
+          className="transition-transform hover:scale-105 cursor-pointer w-full"
         >
           <Card
             data-testid={`city-card`}
-            className="w-[222px] h-[206px] p-[20px] @container/card text-white "
+            className="w-full h-[206px] p-[20px] @container/card text-white aspect-[222/206]"
           >
             <CardBackground
               src={city.image}
