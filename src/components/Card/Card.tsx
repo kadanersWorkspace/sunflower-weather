@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 //imported from shadcn/ui/card.tsx
 
@@ -73,7 +74,10 @@ function CardContent({ className, ...props }: React.ComponentProps<"div">) {
     />
   );
 }
-function CardBackground({ className, ...props }: React.ComponentProps<"img">) {
+function CardBackground({
+  className,
+  ...props
+}: React.ComponentProps<typeof Image>) {
   return (
     <div
       data-slot="card-background"
@@ -82,7 +86,14 @@ function CardBackground({ className, ...props }: React.ComponentProps<"img">) {
         className
       )}
     >
-      <img data-slot="card-image" className="object-cover" {...props} />
+      <Image
+        data-slot="card-image"
+        className="object-cover"
+        fill
+        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, (max-width: 1536px) 20vw, 16vw"
+        {...props}
+        alt={props.alt || "Card Background"}
+      />
     </div>
   );
 }

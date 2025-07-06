@@ -88,21 +88,18 @@ describe("CityList Component", () => {
     const cairoImage = screen.getByAltText("Cairo");
 
     expect(barcelonaImage).toBeInTheDocument();
-    expect(barcelonaImage).toHaveAttribute(
-      "src",
-      "https://picsum.photos/id/402/500/500"
-    );
+    expect(
+      decodeURIComponent(barcelonaImage.getAttribute("src") || "")
+    ).toContain("picsum.photos/id/402");
 
     expect(tokyoImage).toBeInTheDocument();
-    expect(tokyoImage).toHaveAttribute(
-      "src",
-      "https://picsum.photos/id/401/500/500"
+    expect(decodeURIComponent(tokyoImage.getAttribute("src") || "")).toContain(
+      "picsum.photos/id/401"
     );
 
     expect(cairoImage).toBeInTheDocument();
-    expect(cairoImage).toHaveAttribute(
-      "src",
-      "https://picsum.photos/id/400/500/500"
+    expect(decodeURIComponent(cairoImage.getAttribute("src") || "")).toContain(
+      "picsum.photos/id/400"
     );
   });
 

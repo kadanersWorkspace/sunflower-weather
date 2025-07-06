@@ -133,7 +133,7 @@ async function WeatherContent({
             Weather data unavailable
           </h1>
           <p className="text-gray-600 mb-4">
-            Sorry, we couldn't fetch the weather data for {city.name}.
+            Sorry, we couldn&apos;t fetch the weather data for {city.name}.
           </p>
           <Link
             href="/dashboard?units=celsius"

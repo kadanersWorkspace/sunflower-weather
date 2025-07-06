@@ -2,6 +2,11 @@
 
 A weather application built with Next.js
 
+[![Vercel](https://vercelbadge.vercel.app/api/kadanersWorkspace/sunflower-weather)](https://sunflower-weather.vercel.app)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+
 ## 📦 Tech Stack
 
 - **Framework**: Next.js 15 with App Router

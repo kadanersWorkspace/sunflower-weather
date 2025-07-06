@@ -58,11 +58,7 @@ export default function CityList({ cities }: { cities: CityWithDistance[] }) {
             data-testid={`city-card`}
             className="w-full h-[206px] p-[20px] @container/card text-white aspect-[222/206]"
           >
-            <CardBackground
-              src={city.image}
-              alt={city.name}
-              className="w-full h-full object-cover"
-            />
+            <CardBackground src={city.image} alt={city.name} />
             <CardHeader className="p-0 leading-[26px]">
               <CardTitle className="text-[26px] p-0 font-normal text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
                 {city.name}
