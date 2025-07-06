@@ -20,9 +20,7 @@ export default async function Home({ searchParams }: PageProps) {
     typeof params?.continent === "string" ? params.continent : "";
   const sortBy = typeof params?.sortBy === "string" ? params.sortBy : "";
 
-  const baseUrl = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "http://localhost:3000";
+  const baseUrl = process.env.BASE_URL;
   const apiUrl = new URL("/api/cities", baseUrl);
 
   if (searchQuery) {
