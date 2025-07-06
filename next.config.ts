@@ -14,6 +14,21 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  webpack: (config, { dev, isServer }) => {
+    if (!dev && !isServer) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        'lightningcss': false,
+      };
+    }
+
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      'lightningcss': false,
+    };
+
+    return config;
+  },
 };
 
 export default nextConfig;
